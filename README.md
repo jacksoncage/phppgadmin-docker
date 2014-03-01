@@ -8,6 +8,8 @@ Apache will make of the following environment variables.
 
 	APACHE_SERVERNAME=localhost
 	APACHE_SERVERALIAS=docker.localhost
+	POSTGRES_HOST=localhost
+	POSTGRES_PORT=5432
 
 
 ### Use the pre built image
@@ -26,7 +28,7 @@ If you prefer you can easily build the docker image by yourself. After this the 
 ### Start the container
 The container has all pre requisites set up to run phpPgAdmin. Specify all needed environment variables.
 
-	$ sudo docker run -i -d -p 80 -e APACHE_SERVERNAME=jacksoncage.se APACHE_SERVERALIAS=phppgadmin.jacksoncage.se jacksoncage/phppgadmin
+	$ sudo docker run -i -d -p 80 -e APACHE_SERVERNAME=jacksoncage.se -e APACHE_SERVERALIAS=phppgadmin.jacksoncage.se -e POSTGRES_HOST=localhost -e POSTGRES_PORT=5432 jacksoncage/phppgadmin
 
 Trying the browser on url http://localhost/phppgadmin.
 
@@ -34,7 +36,7 @@ Trying the browser on url http://localhost/phppgadmin.
 #### Start the container and keep control
 The command above starts the container in deamon mode (-d) and runs in the background. If you want to start it by yourself just to see what happens use this command:
 
-	$ sudo docker run -i -t -p 80 -e APACHE_SERVERNAME=jacksoncage.se APACHE_SERVERALIAS=phppgadmin.jacksoncage.se jacksoncage/phppgadmin bash
+	$ sudo docker run -i -t -p 80 -e APACHE_SERVERNAME=jacksoncage.se -e APACHE_SERVERALIAS=phppgadmin.jacksoncage.se -e POSTGRES_HOST=localhost -e POSTGRES_PORT=5432 jacksoncage/phppgadmin bash
 
 Notice the two changes made here, first we replaced the deamon switch (-d) with the tty switch (-t) which pipes the std in and std out to your terminal.
 

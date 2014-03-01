@@ -41,6 +41,7 @@ RUN a2enmod rewrite
 
 # Fix phppgadmin
 ADD ./phppgadmin.conf /etc/apache2/conf.d/phppgadmin
+ADD ./config.inc.php /usr/share/phppgadmin/conf/config.inc.php
 
 # Set Apache environment variables (can be changed on docker run with -e)
 ENV APACHE_SERVERNAME localhost
