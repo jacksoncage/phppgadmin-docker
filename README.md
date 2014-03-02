@@ -1,8 +1,8 @@
 Automated build of phpPgAdmin with Docker
 ===========
 
- > Master and Debian branches are based on [Debian official repository](https://index.docker.io/_/debian/)
- > Ubuntu branch are based on [Ubuntu official repository](https://index.docker.io/_/ubuntu/)
+ - Master and Debian branches are based on [Debian official repository](https://index.docker.io/_/debian/)
+ - Ubuntu branch are based on [Ubuntu official repository](https://index.docker.io/_/ubuntu/)
 
 ### Apache and Postgres environment variables
 Apache and Postgres will make of the following environment variables.
