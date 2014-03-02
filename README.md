@@ -3,13 +3,21 @@ Automated build of phpPgAdmin with Docker
 
  > Based on [Debian official repository](https://index.docker.io/_/debian/)
 
-### Apache environment variables
-Apache will make of the following environment variables.
+### Apache and Postgres environment variables
+Apache and Postgres will make of the following environment variables.
 
-	APACHE_SERVERNAME=localhost
-	APACHE_SERVERALIAS=docker.localhost
 	POSTGRES_HOST=localhost
 	POSTGRES_PORT=5432
+	POSTGRES_DEFAULTDB=defaultdb
+	APACHE_SERVERNAME=localhost
+	APACHE_SERVERADMIN=admin@localhost
+	APACHE_DOCUMENTROOT=/var/www
+	APACHE_RUN_USER=www-data
+	APACHE_RUN_GROUP=www-data
+	APACHE_LOG_DIR=/var/web/log/apache2
+	APACHE_PID_FILE=/var/run/apache2.pid
+	APACHE_RUN_DIR=/var/run/apache2
+	APACHE_LOCK_DIR=/var/lock/apache2
 
 
 ### Use the pre built image
@@ -28,7 +36,7 @@ If you prefer you can easily build the docker image by yourself. After this the 
 ### Start the container
 The container has all pre requisites set up to run phpPgAdmin. Specify all needed environment variables.
 
-	$ sudo docker run -i -d -p 80 -e APACHE_SERVERNAME=jacksoncage.se -e APACHE_SERVERALIAS=phppgadmin.jacksoncage.se -e POSTGRES_HOST=localhost -e POSTGRES_PORT=5432 jacksoncage/phppgadmin
+	$ sudo docker run -i -d -p 80 -e APACHE_SERVERNAME=jacksoncage.se -e POSTGRES_HOST=localhost -e POSTGRES_PORT=5432 jacksoncage/phppgadmin
 
 Trying the browser on url http://localhost/phppgadmin.
 
@@ -36,7 +44,7 @@ Trying the browser on url http://localhost/phppgadmin.
 #### Start the container and keep control
 The command above starts the container in deamon mode (-d) and runs in the background. If you want to start it by yourself just to see what happens use this command:
 
-	$ sudo docker run -i -t -p 80 -e APACHE_SERVERNAME=jacksoncage.se -e APACHE_SERVERALIAS=phppgadmin.jacksoncage.se -e POSTGRES_HOST=localhost -e POSTGRES_PORT=5432 jacksoncage/phppgadmin bash
+	$ sudo docker run -i -t -p 80 -e APACHE_SERVERNAME=jacksoncage.se -e POSTGRES_HOST=localhost -e POSTGRES_PORT=5432 jacksoncage/phppgadmin bash
 
 Notice the two changes made here, first we replaced the deamon switch (-d) with the tty switch (-t) which pipes the std in and std out to your terminal.
 

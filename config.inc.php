@@ -11,14 +11,14 @@
 	// indexed from zero upwards.
 
 	// Display name for the server on the login screen
-	$conf['servers'][0]['desc'] = 'PostgreSQL';
+	$conf['servers'][0]['desc'] = $_ENV["POSTGRES_HOST"];
 
 	// Hostname or IP address for server.  Use '' for UNIX domain socket.
 	// use 'localhost' for TCP/IP connection on this computer
-	$conf['servers'][0]['host'] = '${POSTGRES_HOST}';
+	$conf['servers'][0]['host'] = $_ENV["POSTGRES_HOST"];
 
 	// Database port on server (5432 is the PostgreSQL default)
-	$conf['servers'][0]['port'] = ${POSTGRES_PORT};
+	$conf['servers'][0]['port'] = $_ENV["POSTGRES_PORT"];
 
 	// Database SSL mode
 	// Possible options: disable, allow, prefer, require
@@ -28,7 +28,7 @@
 
 	// Change the default database only if you cannot connect to template1.
 	// For a PostgreSQL 8.1+ server, you can set this to 'postgres'.
-	$conf['servers'][0]['defaultdb'] = 'template1';
+	$conf['servers'][0]['defaultdb'] = $_ENV["POSTGRES_DEFAULTDB"];
 
 	// Specify the path to the database dump utilities for this server.
 	// You can set these to '' if no dumper is available.
@@ -85,7 +85,7 @@
 	// will be denied. Only set this false once you have read the FAQ and
 	// understand how to change PostgreSQL's pg_hba.conf to enable
 	// passworded local connections.
-	$conf['extra_login_security'] = false;
+	$conf['extra_login_security'] = true;
 
 	// Only show owned databases?
 	// Note: This will simply hide other databases in the list - this does
