@@ -51,8 +51,8 @@
 	//$conf['servers'][1]['pg_dumpall_path'] = 'C:\\Program Files\\PostgreSQL\\8.0\\bin\\pg_dumpall.exe';
 	//$conf['servers'][1]['slony_support'] = false;
 	//$conf['servers'][1]['slony_sql'] = 'C:\\Program Files\\PostgreSQL\\8.0\\share';
-	
-	
+
+
 	// Example of groups definition.
 	// Groups allow administrators to logicaly group servers together under group nodes in the left browser tree
 	//
@@ -60,32 +60,32 @@
 	//$conf['srv_groups'][0]['desc'] = 'group one';
 	//
 	// Add here servers indexes belonging to the group '0' seperated by comma
-	//$conf['srv_groups'][0]['servers'] = '0,1,2'; 
+	//$conf['srv_groups'][0]['servers'] = '0,1,2';
 	//
 	// A server can belong to multi groups
 	//$conf['srv_groups'][1]['desc'] = 'group two';
 	//$conf['srv_groups'][1]['servers'] = '3,1';
-	
+
 
 	// Default language. E.g.: 'english', 'polish', etc.  See lang/ directory
-	// for all possibilities. If you specify 'auto' (the default) it will use 
+	// for all possibilities. If you specify 'auto' (the default) it will use
 	// your browser preference.
 	$conf['default_lang'] = 'auto';
 
-	// AutoComplete uses AJAX interaction to list foreign key values 
-	// on insert fields. It currently only works on single column 
+	// AutoComplete uses AJAX interaction to list foreign key values
+	// on insert fields. It currently only works on single column
 	// foreign keys. You can choose one of the following values:
 	// 'default on' enables AutoComplete and turns it on by default.
 	// 'default off' enables AutoComplete but turns it off by default.
 	// 'disable' disables AutoComplete.
 	$conf['autocomplete'] = 'default on';
-	
+
 	// If extra login security is true, then logins via phpPgAdmin with no
 	// password or certain usernames (pgsql, postgres, root, administrator)
 	// will be denied. Only set this false once you have read the FAQ and
 	// understand how to change PostgreSQL's pg_hba.conf to enable
 	// passworded local connections.
-	$conf['extra_login_security'] = true;
+	$conf['extra_login_security'] = false;
 
 	// Only show owned databases?
 	// Note: This will simply hide other databases in the list - this does
@@ -97,9 +97,9 @@
 	// a database, but they do take up space in the interface.
 	$conf['show_comments'] = true;
 
-	// Display "advanced" objects? Setting this to true will show 
-	// aggregates, types, operators, operator classes, conversions, 
-	// languages and casts in phpPgAdmin. These objects are rarely 
+	// Display "advanced" objects? Setting this to true will show
+	// aggregates, types, operators, operator classes, conversions,
+	// languages and casts in phpPgAdmin. These objects are rarely
 	// administered and can clutter the interface.
 	$conf['show_advanced'] = false;
 
@@ -125,13 +125,13 @@
 
 	// Width of the left frame in pixels (object browser)
 	$conf['left_width'] = 200;
-	
+
 	// Which look & feel theme to use
 	$conf['theme'] = 'default';
-	
+
 	// Show OIDs when browsing tables?
 	$conf['show_oids'] = false;
-	
+
 	// Max rows to show on a page when browsing record sets
 	$conf['max_rows'] = 30;
 
@@ -145,11 +145,11 @@
 	// '%s', if present, will be replaced with the PostgreSQL version
 	// (e.g. 8.4 )
 	$conf['help_base'] = 'http://www.postgresql.org/docs/%s/interactive/';
-	
+
 	// Configuration for ajax scripts
 	// Time in seconds. If set to 0, refreshing data using ajax will be disabled (locks and activity pages)
 	$conf['ajax_refresh'] = 3;
-	
+
 	/*****************************************
 	 * Don't modify anything below this line *
 	 *****************************************/
