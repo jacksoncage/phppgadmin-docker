@@ -57,7 +57,7 @@ The first command inspects your created container and get the IPv4 address. Seco
     $ sudo docker inspect <container_id> | grep IPAddress | cut -d '"' -f 4
     $ sudo docker port <container_id> 80 | cut -d ":" -f2
 
-Now go to `<your container's ip>:<container's port>` in your browser
+Now go to `<your container's ip>:<container's port>/browser` in your browser
 
 
 ### Stop the container
